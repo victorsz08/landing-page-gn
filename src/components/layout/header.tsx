@@ -30,7 +30,7 @@ const items: NavItems[] = [
 ];
 export function Header() {
     return (
-        <header className="w-full p-6 border-b border-muted/60 bg-background fixed flex items-center justify-between">
+        <header className="w-full z-[1000] p-6 border-b border-muted/60 bg-background fixed flex items-center justify-between">
             <h1 className="text-base font-semibold text-foreground">
                 GERALDO NETO <span className="text-primary">TREINADOR</span>
             </h1>
@@ -40,9 +40,7 @@ export function Header() {
                         {item.label}
                     </MenuItem>
                 ))}
-                <Button size="sm">
-                    Começar agora!
-                </Button>
+                <Button size="sm">Começar agora!</Button>
             </nav>
         </header>
     );

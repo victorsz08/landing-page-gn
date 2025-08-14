@@ -29,7 +29,7 @@ export default function RootLayout({
     return (
         <html lang="pt-BR" suppressHydrationWarning>
             <body
-                className={`${inter.variable} ${poppins.className} antialiased`}
+                className={`${inter.variable} ${poppins.className} antialiased bg-background`}
             >
                 <ThemeProvider
                     attribute="class"
