@@ -19,7 +19,7 @@ export function About() {
                     alt="Foto Perfil"
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent via-transparent"/>
+                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent via-transparent" />
             </div>
             <section className="flex flex-col gap-4 justify-center h-full w-full">
                 <h1 className="text-4xl font-bold tracking-tight text-foreground">
@@ -72,9 +72,6 @@ export function About() {
                         </CardContent>
                     </Card>
                 </div>
-                <a className="mt-4">
-                    <Button size="lg">Comece hoje!</Button>
-                </a>
             </section>
         </section>
     );
