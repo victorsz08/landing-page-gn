@@ -9,31 +9,36 @@ export function Services() {
                 <h1 className="text-4xl font-bold text-foreground">
                     BENEFÍCIOS EXCLUSIVOS
                 </h1>
-                <div className="flex flex-col gap-2 justify-start items-start">
+                <div className="flex flex-col space-y-4 justify-start items-start">
                     <ListItem>
                         Planos de treino 100% ajustados ao seu nível, objetivos
                         e rotina.
                     </ListItem>
                     <ListItem>
-                        Flexibilidade total: treine onde e quando quiser, com meu suporte contínuo via WhatsApp.
+                        Flexibilidade total: treine onde e quando quiser, com
+                        meu suporte contínuo via WhatsApp.
                     </ListItem>
                     <ListItem>
-                        Feedbacks regulares, ajustes personalizados e suporte por vídeos para aprimorar suas execuções.​
+                        Feedbacks regulares, ajustes personalizados e suporte
+                        por vídeos para aprimorar suas execuções.​
                     </ListItem>
                     <ListItem>
-                        Disponibilidade para tirar dúvidas e adaptar treinos conforme suas necessidades.
+                        Disponibilidade para tirar dúvidas e adaptar treinos
+                        conforme suas necessidades.
                     </ListItem>
                     <ListItem>
-                        Acesso a videos explicativos de todos os exercícios prescritos, garantindo um melhor entendimento e aprendizado!
+                        Acesso a videos explicativos de todos os exercícios
+                        prescritos, garantindo um melhor entendimento e
+                        aprendizado!
                     </ListItem>
                     <ListItem>
-                        Métodos baseados em ciência e mais de 10 anos de experiência em musculação, garantindo máxima eficiência nos treinos.
+                        Métodos baseados em ciência e mais de 10 anos de
+                        experiência em musculação, garantindo máxima eficiência
+                        nos treinos.
                     </ListItem>
                 </div>
                 <a>
-                    <Button size="lg">
-                        Comece hoje!
-                    </Button>
+                    <Button size="lg">Comece hoje!</Button>
                 </a>
             </section>
             <Image
