@@ -4,6 +4,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export function Tutorial() {
@@ -30,7 +31,8 @@ export function Tutorial() {
                                         className="underline font-medium text-foreground"
                                     >
                                         planos
-                                    </Link>.
+                                    </Link>
+                                    .
                                 </p>
                             </AccordionContent>
                         </AccordionItem>
@@ -76,6 +78,11 @@ export function Tutorial() {
                         </AccordionItem>
                     </Accordion>
                 </section>
+                <div className="w-full flex justify-center mt-10">
+                    <a href="#pricing">
+                        <Button size="lg">Mude seu corpo hoje</Button>
+                    </a>
+                </div>
             </section>
         </section>
     );

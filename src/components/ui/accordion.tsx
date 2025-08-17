@@ -17,12 +17,12 @@ function AccordionItem({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Item>) {
   return (
-    <AccordionPrimitive.Item
-      data-slot="accordion-item"
-      className={cn("border-b last:border-b-0", className)}
-      {...props}
-    />
-  )
+      <AccordionPrimitive.Item
+          data-slot="accordion-item"
+          className={cn("border-b border-b-muted last:border-b-0", className)}
+          {...props}
+      />
+  );
 }
 
 function AccordionTrigger({

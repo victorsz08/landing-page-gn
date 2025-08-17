@@ -3,6 +3,7 @@ import { Home } from "./feature/home";
 import { Services } from "./feature/services";
 import { Princing } from "./feature/pricing";
 import { Tutorial } from "./feature/tutorial";
+import { Faq } from "./feature/FAQ";
 
 export default function LandingPage() {
     return (
@@ -12,6 +13,7 @@ export default function LandingPage() {
             <Services />
             <Princing />
             <Tutorial />
+            <Faq />
         </main>
     );
 }
