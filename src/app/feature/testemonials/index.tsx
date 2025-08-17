@@ -1,5 +1,6 @@
-"use client"
+"use client";
 
+import { Button } from "@/components/ui/button";
 import {
     Carousel,
     CarouselContent,
@@ -8,6 +9,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { Unlock } from "lucide-react";
 import Image from "next/image";
 
 export function Testemonials() {
@@ -25,12 +27,12 @@ export function Testemonials() {
                 <div className="w-full h-full mt-10">
                     <Carousel
                         opts={{
-                            loop: true, // faz o loop infinito
+                            loop: true,
                         }}
                         plugins={[
                             Autoplay({
-                                delay: 3000, // tempo em ms entre slides
-                                stopOnInteraction: false, // continua mesmo se o usuário interagir
+                                delay: 4000,
+                                stopOnInteraction: true,
                             }),
                         ]}
                     >
@@ -50,6 +52,14 @@ export function Testemonials() {
                         <CarouselPrevious />
                         <CarouselNext />
                     </Carousel>
+                </div>
+                <div className="w-full flex items-center justify-center mt-10">
+                    <a href="#pricing">
+                        <Button size="lg">
+                            <Unlock className="w-6 h-6" strokeWidth={3} />
+                            QUERO MINHA TRANSFORMAÇÃO AGORA
+                        </Button>
+                    </a>
                 </div>
             </section>
         </section>
