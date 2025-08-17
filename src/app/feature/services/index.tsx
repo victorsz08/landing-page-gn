@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ListItem } from "./item";
 import { Button } from "@/components/ui/button";
+import { Unlock } from "lucide-react";
 
 export function Services() {
     return (
@@ -9,7 +10,7 @@ export function Services() {
                 <h1 className="text-4xl font-bold text-foreground">
                     BENEFÍCIOS EXCLUSIVOS
                 </h1>
-                <div className="flex flex-col space-y-4 justify-start items-start">
+                <div className="flex flex-col space-y-8 justify-start items-start">
                     <ListItem>
                         Planos de treino 100% ajustados ao seu nível, objetivos
                         e rotina.
@@ -37,8 +38,11 @@ export function Services() {
                         nos treinos.
                     </ListItem>
                 </div>
-                <a>
-                    <Button size="lg">Comece hoje!</Button>
+                <a href="#pricing">
+                    <Button size="lg">
+                        Comece hoje!{" "}
+                        <Unlock strokeWidth={3} className="w-8 h-8" />
+                    </Button>
                 </a>
             </section>
             <Image

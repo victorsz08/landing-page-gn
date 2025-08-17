@@ -1,15 +1,14 @@
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CardPricing } from "./card-pricing";
 import { Button } from "@/components/ui/button";
-
-
+import { Unlock } from "lucide-react";
 
 interface PricingProps {
     price: string;
     desc: string;
     popular?: boolean;
     title: string;
-};
+}
 
 const pricings: PricingProps[] = [
     {
@@ -20,7 +19,7 @@ const pricings: PricingProps[] = [
     {
         title: "Trimestral",
         price: "R$250",
-        desc: "Duração de 3 meses"
+        desc: "Duração de 3 meses",
     },
     {
         title: "Semestral",
@@ -31,12 +30,10 @@ const pricings: PricingProps[] = [
     {
         title: "Anual",
         price: "R$900",
-        desc: "Perfeito para você que quer manter consistência"
-    }
-]
+        desc: "Perfeito para você que quer manter consistência",
+    },
+];
 export function Princing() {
-
-
     return (
         <section className="h-screen w-full flex justify-center items-center">
             <section className="flex flex-col items-center justify-center w-full space-y-12">
@@ -57,24 +54,39 @@ export function Princing() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-2">
-                                <h1 className={`${item.popular ? "text-primary" : "text-foreground"}
-                                font-extrabold text-5xl font-inter`}>
+                                <h1
+                                    className={`${
+                                        item.popular
+                                            ? "text-primary"
+                                            : "text-foreground"
+                                    }
+                                font-extrabold text-5xl font-inter`}
+                                >
                                     {item.price}
                                 </h1>
                                 <CardDescription className="text-xs font-light text-muted-foreground">
                                     {item.desc}
                                 </CardDescription>
                             </CardContent>
-                            
                         </CardPricing>
                     ))}
                 </div>
+                <div className="w-full text-center">
+                    <p className="text-sm font-normal text-muted-foreground">
+                        <strong className="text-foreground font-medium">
+                            Vagas limitadas:
+                        </strong>{" "}
+                        As vagas são limitadas para garantir a qualidade do
+                        atendimento.
+                    </p>
+                </div>
                 <a>
                     <Button size="lg">
+                        <Unlock strokeWidth={3} className="w-8 h-8" />
                         Comece agora e trasnforme sua vida
                     </Button>
                 </a>
             </section>
         </section>
-    )
+    );
 }
