@@ -4,7 +4,7 @@ export function HeroWarranty() {
     return (
         <section
             className="w-full px-32 py-24 flex flex-col items-center justify-center max-lg:px-6
-        max-lg:h-full max-lg:py-4"
+        max-lg:h-svh max-lg:py-4"
         >
             <section className="flex items-center gap-6">
                 <div className="relative">

@@ -16,11 +16,11 @@ export function Testemonials() {
     return (
         <section
             id="testimonials"
-            className="w-full h-full px-32 flex items-center justify-center max-lg:px-4"
+            className="w-full h-full px-32 flex items-center justify-center max-lg:px-4 max-lg:h-full"
         >
             <section className="w-full">
                 <div className="w-full text-center">
-                    <h1 className="text-4xl font-bold text-foreground">
+                    <h1 className="text-4xl font-bold text-foreground max-lg:text-2xl">
                         O QUE NOSSOS ALUNOS ESTÃO FALANDO?
                     </h1>
                     <p className="text-sm font-light text-muted-foreground">
@@ -59,7 +59,7 @@ export function Testemonials() {
                         <CarouselNext />
                     </Carousel>
                 </div>
-                <div className="w-full flex items-center justify-center mt-10">
+                <div className="w-full flex items-center justify-center mt-10 px-4">
                     <a href="#pricing">
                         <Button size="lg">
                             <Unlock className="w-6 h-6" strokeWidth={3} />

@@ -104,11 +104,13 @@ export function Faq() {
     return (
         <section
             id="faq"
-            className="w-full h-screen flex items-center justify-center px-32 max-lg:px-4 max-lg:h-full max-lg:py-20"
+            className="w-full h-screen flex items-center justify-center px-32 max-lg:px-4 max-lg:h-svh max-lg:py-20"
         >
             <section className="flex flex-col justify-center items-center space-y-8 w-full">
                 <div className="flex flex-col items-center space-y-2">
-                    <h1 className="text-4xl font-bold text-foreground">FAQ</h1>
+                    <h1 className="text-4xl font-bold text-foreground max-lg:text-2xl">
+                        FAQ
+                    </h1>
                     <p className="text-sm font-light text-muted-foreground">
                         Dúvidas frequentes sobre a consultoria.
                     </p>

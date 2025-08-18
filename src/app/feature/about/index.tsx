@@ -11,7 +11,7 @@ export function About() {
         <section
             id="about"
             className="h-screen w-full flex items-center justify-center gap-4 px-32 max-lg:p-8 max-lg:flex-col
-            max-lg:h-full"
+            max-lg:h-svh"
         >
             <div className="relative w-full">
                 <Image
@@ -24,7 +24,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent via-transparent" />
             </div>
             <section className="flex flex-col gap-4 justify-center h-full w-full max-lg:text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-foreground">
+                <h1 className="text-4xl font-bold tracking-tight text-foreground max-lg:text-2xl">
                     QUEM SOU EU?
                 </h1>
                 <p className="text-sm text-foreground/70 font-light max-lg:text-xs">
@@ -35,41 +35,24 @@ export function About() {
                     objetivos! Seja eles emagrecimento, saúde, hipertrofia,
                     reabilitação, etc.
                 </p>
-                <p className="text-sm text-foreground/70 font-light max-lg:text-xs">
-                    Conseguimos alcançar todos os objetivos! Hoje, minha área de
-                    domínio é a musculação em sí a qual trabalho nestes longos
-                    anos e estou aqui disposto a te ajudar da melhor forma
-                    possível e te ajudar a buscar o máximo desempenho com meus
-                    métodos de treino, vamos comigo?
-                </p>
                 <div className="flex items-center mt-4 justify-start gap-4 max-lg:gap-2 max-lg:justify-center">
-                    <Card>
+                    <Card className="h-28 grid justify-center items-center">
                         <CardContent className="flex flex-col text-center items-center">
                             <CardTitle className="text-4xl font-bold text-primary font-inter">
-                                +5
+                                +10
                             </CardTitle>
                             <CardDescription className="text-xs">
                                 Anos de experiência
                             </CardDescription>
                         </CardContent>
                     </Card>
-                    <Card>
+                    <Card className="h-28 grid justify-center items-center">
                         <CardContent className="flex flex-col text-center items-center">
                             <CardTitle className="text-4xl font-bold text-primary font-inter">
-                                +50
+                                +1000
                             </CardTitle>
                             <CardDescription className="text-xs">
                                 Alunos satisfeitos
-                            </CardDescription>
-                        </CardContent>
-                    </Card>
-                    <Card>
-                        <CardContent className="flex flex-col text-center items-center">
-                            <CardTitle className="text-4xl font-bold text-primary font-inter">
-                                10
-                            </CardTitle>
-                            <CardDescription className="text-xs">
-                                Anos na musculação
                             </CardDescription>
                         </CardContent>
                     </Card>
