@@ -5,7 +5,10 @@ import { Unlock } from "lucide-react";
 
 export function Services() {
     return (
-        <section className="w-full px-32 h-screen flex items-center justify-around">
+        <section
+            id="services"
+            className="w-full px-32 h-screen flex items-center justify-around"
+        >
             <section className="w-[50%] space-y-6 flex flex-col gap-8">
                 <h1 className="text-4xl font-bold text-foreground">
                     BENEFÍCIOS EXCLUSIVOS

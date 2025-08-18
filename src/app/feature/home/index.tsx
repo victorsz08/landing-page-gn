@@ -3,10 +3,17 @@ import Image from "next/image";
 
 export function Home() {
     return (
-        <section className="h-screen w-full flex justify-center items-center px-32">
-            <section className="flex items-center justify-center gap-12">
-                <section className="flex flex-col w-full justify-center items-start gap-4">
-                    <h1 className="text-4xl w-[80%] font-bold text-foreground tracking-tight leading-14">
+        <section
+            id="home"
+            className="h-screen w-full flex justify-center items-center px-32
+            max-sm:px-12"
+        >
+            <section className="flex items-center justify-center gap-12 max-sm:flex-col">
+                <section className="flex flex-col w-full justify-center items-start gap-4 max-sm:text-center">
+                    <h1
+                        className="text-4xl w-[80%] font-bold text-foreground tracking-tight leading-14
+                    max-sm:text-2xl max-sm:w-full"
+                    >
                         <span className="text-primary">
                             TREINO 100% INDIVIDUAL
                         </span>{" "}
@@ -18,7 +25,7 @@ export function Home() {
                         personalizado e foco total nos resultados.
                     </p>
                     <div className="flex items-center justify-start gap-2">
-                        <a href="#services">
+                        <a href="#pricing">
                             <Button size={"lg"}>
                                 Comece sua transformação hoje
                             </Button>
@@ -34,7 +41,7 @@ export function Home() {
                     <div className="absolute inset-0 z-0 bg-radial to-70% from-primary to-transparent" />
                     <div className="absolute inset-0 z-10 h-full">
                         <Image
-                            src="/profile.png"
+                            src="/profile-2.png"
                             width={460}
                             height={460}
                             alt="Foto Perfil"

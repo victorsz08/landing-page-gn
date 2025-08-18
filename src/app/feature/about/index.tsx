@@ -10,7 +10,10 @@ import Image from "next/image";
 
 export function About() {
     return (
-        <section className="h-screen w-full flex items-center justify-center gap-4 px-32">
+        <section
+            id="about"
+            className="h-screen w-full flex items-center justify-center gap-4 px-32"
+        >
             <div className="relative w-full">
                 <Image
                     src="/profile-2.png"

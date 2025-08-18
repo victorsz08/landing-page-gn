@@ -2,6 +2,15 @@ import { CardContent, CardDescription, CardHeader, CardTitle } from "@/component
 import { CardPricing } from "./card-pricing";
 import { Button } from "@/components/ui/button";
 import { Unlock } from "lucide-react";
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
+import { FormPayment } from "./form";
 
 interface PricingProps {
     price: string;
@@ -35,7 +44,10 @@ const pricings: PricingProps[] = [
 ];
 export function Princing() {
     return (
-        <section className="h-screen w-full flex justify-center items-center">
+        <section
+            id="pricing"
+            className="h-screen w-full flex justify-center items-center"
+        >
             <section className="flex flex-col items-center justify-center w-full space-y-12">
                 <div className="text-center space-y-2">
                     <h1 className="text-3xl font-bold text-foreground">
@@ -80,12 +92,24 @@ export function Princing() {
                         atendimento.
                     </p>
                 </div>
-                <a>
-                    <Button size="lg">
-                        <Unlock strokeWidth={3} className="w-8 h-8" />
-                        Comece agora e trasnforme sua vida
-                    </Button>
-                </a>
+                <Sheet>
+                    <SheetTrigger asChild>
+                        <Button size="lg" type="button">
+                            <Unlock strokeWidth={3} className="w-8 h-8" />
+                            Comece agora e transforme sua vida
+                        </Button>
+                    </SheetTrigger>
+                    <SheetContent className="z-[10000]">
+                        <SheetHeader>
+                            <SheetTitle>Preencha o formulário</SheetTitle>
+                            <SheetDescription>
+                                Preencha todas as informações corretas e
+                                prossiga para o pagamento.
+                            </SheetDescription>
+                        </SheetHeader>
+                        <FormPayment />
+                    </SheetContent>
+                </Sheet>
             </section>
         </section>
     );

@@ -14,7 +14,10 @@ import Image from "next/image";
 
 export function Testemonials() {
     return (
-        <section className="w-full h-full px-32 flex items-center justify-center">
+        <section
+            id="testimonials"
+            className="w-full h-full px-32 flex items-center justify-center"
+        >
             <section className="w-full">
                 <div className="w-full text-center">
                     <h1 className="text-4xl font-bold text-foreground">

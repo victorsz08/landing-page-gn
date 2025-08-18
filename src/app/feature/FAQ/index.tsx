@@ -102,7 +102,10 @@ const items: FaqItems[] = [
 
 export function Faq() {
     return (
-        <section className="w-full h-screen flex items-center justify-center px-32">
+        <section
+            id="faq"
+            className="w-full h-screen flex items-center justify-center px-32"
+        >
             <section className="flex flex-col justify-center items-center space-y-8 w-full">
                 <div className="flex flex-col items-center space-y-2">
                     <h1 className="text-4xl font-bold text-foreground">FAQ</h1>
@@ -113,8 +116,14 @@ export function Faq() {
                 <section className="w-full">
                     <Accordion type="single" collapsible className="w-full">
                         {items.map((item) => (
-                            <AccordionItem className="min-w-full" key={item.value} value={item.value}>
-                                <AccordionTrigger>{item.title}</AccordionTrigger>
+                            <AccordionItem
+                                className="min-w-full"
+                                key={item.value}
+                                value={item.value}
+                            >
+                                <AccordionTrigger>
+                                    {item.title}
+                                </AccordionTrigger>
                                 <AccordionContent>
                                     {item.content}
                                 </AccordionContent>
@@ -124,12 +133,10 @@ export function Faq() {
                 </section>
                 <div className="w-full flex justify-center mt-10">
                     <a href="#pricing">
-                        <Button size="lg">
-                            Adquirir agora!
-                        </Button>
+                        <Button size="lg">Adquirir agora!</Button>
                     </a>
                 </div>
             </section>
         </section>
-    )
+    );
 }
