@@ -11,7 +11,7 @@ export function About() {
         <section
             id="about"
             className="h-screen w-full flex items-center justify-center gap-4 px-32 max-lg:p-8 max-lg:flex-col
-            max-lg:h-svh"
+            max-lg:h-full"
         >
             <div className="relative w-full">
                 <Image

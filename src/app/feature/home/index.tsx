@@ -6,7 +6,7 @@ export function Home() {
         <section
             id="home"
             className="h-screen w-full flex justify-center items-center px-32
-            max-lg:flex-col-reverse max-lg:p-8 max-lg:h-svh"
+            max-lg:flex-col-reverse max-lg:p-8 max-lg:h-full"
         >
             <section className="flex items-center justify-center gap-12 max-sm:flex-col-reverse">
                 <section
