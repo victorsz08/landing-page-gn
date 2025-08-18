@@ -11,6 +11,7 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { FormPayment } from "./form";
+import Image from "next/image";
 
 interface PricingProps {
     price: string;
@@ -46,7 +47,7 @@ export function Princing() {
     return (
         <section
             id="pricing"
-            className="h-screen w-full flex justify-center items-center"
+            className="h-screen w-full flex justify-center items-center max-lg:h-full"
         >
             <section className="flex flex-col items-center justify-center w-full space-y-12">
                 <div className="text-center space-y-2">
@@ -57,7 +58,10 @@ export function Princing() {
                         Escolha um plano que se adapte ao seu objetivo
                     </p>
                 </div>
-                <div className="flex items-center justify-center w-full space-x-6">
+                <div
+                    className="flex items-center justify-center w-full space-x-6 max-lg:flex-col max-lg:space-y-4 
+                max-lg:space-x-0"
+                >
                     {pricings.map((item, index) => (
                         <CardPricing popular={item.popular} key={item.title}>
                             <CardHeader className="w-full flex flex-col justify-center items-center">
@@ -65,7 +69,7 @@ export function Princing() {
                                     {item.title}
                                 </CardTitle>
                             </CardHeader>
-                            <CardContent className="space-y-2">
+                            <CardContent className="space-y-2 text-center">
                                 <h1
                                     className={`${
                                         item.popular
@@ -83,7 +87,19 @@ export function Princing() {
                         </CardPricing>
                     ))}
                 </div>
-                <div className="w-full text-center">
+                <div className="flex flex-col items-center justify-center w-full p-8 gap-2">
+                    <h2 className="text-muted-foreground font-light w-[80%] text-sm text-center">
+                        Compra 100% segura! Receba sua consultoria após
+                        aprovação do pagamento.
+                    </h2>
+                    <Image
+                        src="/mercado-pago-logo.svg"
+                        alt="Pagamento 100% seguro Mercado Pago"
+                        width={240}
+                        height={80}
+                    />
+                </div>
+                <div className="w-full text-center max-lg:px-6">
                     <p className="text-sm font-normal text-muted-foreground">
                         <strong className="text-foreground font-medium">
                             Vagas limitadas:

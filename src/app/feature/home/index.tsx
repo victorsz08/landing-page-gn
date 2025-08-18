@@ -6,13 +6,16 @@ export function Home() {
         <section
             id="home"
             className="h-screen w-full flex justify-center items-center px-32
-            max-sm:px-12"
+            max-lg:px-2 max-lg:flex-col-reverse"
         >
-            <section className="flex items-center justify-center gap-12 max-sm:flex-col">
-                <section className="flex flex-col w-full justify-center items-start gap-4 max-sm:text-center">
+            <section className="flex items-center justify-center gap-12 max-sm:flex-col-reverse">
+                <section
+                    className="flex flex-col w-full justify-center items-start gap-4 
+                max-lg:items-center"
+                >
                     <h1
                         className="text-4xl w-[80%] font-bold text-foreground tracking-tight leading-14
-                    max-sm:text-2xl max-sm:w-full"
+                    max-lg:text-2xl max-lg:w-[90%] max-lg:text-center max-lg:leading-8"
                     >
                         <span className="text-primary">
                             TREINO 100% INDIVIDUAL
@@ -20,11 +23,11 @@ export function Home() {
                         PARA ALCANÇAR SEUS OBJETIVOS{" "}
                         <span className="text-primary">SEM ENROLAÇÃO!</span>
                     </h1>
-                    <p className="text-base w-[80%] mb-8 font-normal text-muted-foreground">
+                    <p className="text-base w-[80%] mb-8 font-normal text-muted-foreground max-lg:text-center">
                         Alcance seus objetivos com um plano de treino
                         personalizado e foco total nos resultados.
                     </p>
-                    <div className="flex items-center justify-start gap-2">
+                    <div className="flex items-center justify-start gap-2 max-lg:flex-col">
                         <a href="#pricing">
                             <Button size={"lg"}>
                                 Comece sua transformação hoje
@@ -37,7 +40,7 @@ export function Home() {
                         </a>
                     </div>
                 </section>
-                <section className="relative w-[48rem] h-[30rem]">
+                <section className="relative w-[48rem] h-[30rem] max-lg:w-[20rem] max-lg:h-[22rem]">
                     <div className="absolute inset-0 z-0 bg-radial to-70% from-primary to-transparent" />
                     <div className="absolute inset-0 z-10 h-full">
                         <Image

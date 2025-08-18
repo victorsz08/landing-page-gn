@@ -7,13 +7,13 @@ export function Services() {
     return (
         <section
             id="services"
-            className="w-full px-32 h-screen flex items-center justify-around"
+            className="w-full px-32 h-screen flex items-center justify-around max-lg:px-6 max-lg:text-center"
         >
-            <section className="w-[50%] space-y-6 flex flex-col gap-8">
+            <section className="w-[50%] space-y-6 flex flex-col gap-8 max-lg:w-full">
                 <h1 className="text-4xl font-bold text-foreground">
                     BENEFÍCIOS EXCLUSIVOS
                 </h1>
-                <div className="flex flex-col space-y-8 justify-start items-start">
+                <div className="flex flex-col space-y-8 justify-start items-start max-lg:text-start">
                     <ListItem>
                         Planos de treino 100% ajustados ao seu nível, objetivos
                         e rotina.
@@ -53,7 +53,7 @@ export function Services() {
                 width={400}
                 height={480}
                 alt="Foto treino"
-                className="object-cover opacity-35"
+                className="object-cover opacity-35 max-lg:hidden"
             />
         </section>
     );

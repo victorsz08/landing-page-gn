@@ -2,7 +2,10 @@ import { Star } from "lucide-react";
 
 export function HeroWarranty() {
     return (
-        <section className="w-full px-32 py-24 flex flex-col items-center justify-center">
+        <section
+            className="w-full px-32 py-24 flex flex-col items-center justify-center max-lg:px-6
+        max-lg:h-full max-lg:py-4"
+        >
             <section className="flex items-center gap-6">
                 <div className="relative">
                     <h1
@@ -25,7 +28,7 @@ export function HeroWarranty() {
                     </h1>
                 </div>
             </section>
-            <h3 className="text-2xl font-bold text-foreground">
+            <h3 className="text-2xl font-bold text-foreground max-lg:text-base max-lg:text-center">
                 NÃO GOSTOU? DEVOLVEMOS SEU DINHEIRO.
             </h3>
         </section>

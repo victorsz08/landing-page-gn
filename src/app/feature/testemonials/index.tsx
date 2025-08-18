@@ -16,7 +16,7 @@ export function Testemonials() {
     return (
         <section
             id="testimonials"
-            className="w-full h-full px-32 flex items-center justify-center"
+            className="w-full h-full px-32 flex items-center justify-center max-lg:px-4"
         >
             <section className="w-full">
                 <div className="w-full text-center">
@@ -41,7 +41,10 @@ export function Testemonials() {
                     >
                         <CarouselContent>
                             {Array.from({ length: 9 }).map((_, index) => (
-                                <CarouselItem className="basis-1/3" key={index}>
+                                <CarouselItem
+                                    className="basis-1/3 max-lg:basis-auto"
+                                    key={index}
+                                >
                                     <Image
                                         alt={`testemonial-${index}`}
                                         src={`/testimonials-${index + 1}.png`}

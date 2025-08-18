@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export function Tutorial() {
     return (
-        <section className="flex justify-center items-center w-full h-screen px-32">
+        <section className="flex justify-center items-center w-full h-screen px-32 max-lg:px-8 max-lg:h-full max-lg:py-24">
             <section className="space-y-8 w-full">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-foreground">

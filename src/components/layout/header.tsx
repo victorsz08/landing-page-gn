@@ -30,7 +30,10 @@ const items: NavItems[] = [
 ];
 export function Header() {
     return (
-        <header className="w-full z-[1000] p-6 border-b border-muted/60 bg-background fixed flex items-center justify-between">
+        <header
+            className="w-full z-[1000] p-6 border-b border-muted/60 bg-background fixed flex items-center 
+        justify-between max-lg:hidden"
+        >
             <h1 className="text-base font-semibold text-foreground">
                 GERALDO NETO <span className="text-primary">TREINADOR</span>
             </h1>

@@ -4,7 +4,7 @@ import { Instagram, Whatsapp } from "./icons";
 
 export function Footer() {
     return (
-        <footer className="w-full flex items-center px-32 py-24">
+        <footer className="w-full flex items-center px-32 py-24 max-lg:px-4">
             <section className="text-center space-y-8 w-full">
                 <p className="text-xs font-normal text-foreground">
                     ©2025 Geraldo Neto Treinador - Todos os direitos reservados

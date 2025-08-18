@@ -5,7 +5,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <Header />
-            <main className="pb-10">{children}</main>
+            <main className="pt-10 max-lg:pt-0">{children}</main>
             <Footer />
         </>
     );
