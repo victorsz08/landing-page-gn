@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "../ui/button";
 import { MenuItem } from "./menu-item";
 
@@ -34,9 +35,15 @@ export function Header() {
             className="w-full z-[1000] p-6 border-b border-muted/60 bg-background fixed flex items-center 
         justify-between max-lg:hidden"
         >
-            <h1 className="text-base font-semibold text-foreground">
-                GERALDO NETO <span className="text-primary">TREINADOR</span>
-            </h1>
+            <div className="flex items-baseline-last gap-2">
+                <Image
+                    src="/logo.svg"
+                    alt="logo geraldo neto treinador"
+                    width={42}
+                    height={42}
+                    className="w-[2rem] h-fit"
+                />
+            </div>
             <nav className="flex items-center gap-4">
                 {items.map((item) => (
                     <MenuItem key={item.href} link={item.href}>
