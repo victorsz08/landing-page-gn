@@ -10,7 +10,7 @@ export function About() {
     return (
         <section
             id="about"
-            className="h-screen w-full flex items-center justify-center gap-4 px-32 max-lg:px-6 max-lg:flex-col
+            className="h-screen w-full flex items-center justify-center gap-4 px-32 max-lg:p-8 max-lg:flex-col
             max-lg:h-full"
         >
             <div className="relative w-full">
@@ -42,7 +42,7 @@ export function About() {
                     possível e te ajudar a buscar o máximo desempenho com meus
                     métodos de treino, vamos comigo?
                 </p>
-                <div className="flex items-center mt-4 justify-start gap-4 max-lg:gap-2">
+                <div className="flex items-center mt-4 justify-start gap-4 max-lg:gap-2 max-lg:justify-center">
                     <Card>
                         <CardContent className="flex flex-col text-center items-center">
                             <CardTitle className="text-4xl font-bold text-primary font-inter">

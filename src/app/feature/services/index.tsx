@@ -7,7 +7,8 @@ export function Services() {
     return (
         <section
             id="services"
-            className="w-full px-32 h-screen flex items-center justify-around max-lg:px-6 max-lg:text-center"
+            className="w-full px-32 h-screen flex items-center justify-around max-lg:text-center
+            max-lg:p-8"
         >
             <section className="w-[50%] space-y-6 flex flex-col gap-8 max-lg:w-full">
                 <h1 className="text-4xl font-bold text-foreground">

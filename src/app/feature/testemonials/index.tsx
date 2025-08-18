@@ -48,9 +48,9 @@ export function Testemonials() {
                                     <Image
                                         alt={`testemonial-${index}`}
                                         src={`/testimonials-${index + 1}.png`}
-                                        width={450}
-                                        height={400}
-                                        className="rounded-lg object-cover h-[42rem]"
+                                        width={350}
+                                        height={320}
+                                        className="rounded-lg object-cover"
                                     />
                                 </CarouselItem>
                             ))}
