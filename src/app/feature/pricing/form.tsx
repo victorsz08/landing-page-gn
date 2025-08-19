@@ -95,98 +95,104 @@ export function FormPayment() {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(paymentSubmit)}
-                className="px-4 space-y-4 h-full"
+                className="px-4 flex flex-col justify-between pb-10 space-y-4 h-full"
             >
-                <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Nome</FormLabel>
-                            <Input {...field} type="text" />
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <Input {...field} type="email" />
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="contact"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Contato</FormLabel>
-                            <Input
-                                value={field.value}
-                                type="text"
-                                maxLength={14}
-                                onChange={(e) => {
-                                    field.onChange(
-                                        transformPhonePattern(e.target.value)
-                                    );
-                                }}
-                            />
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="product"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel className="mb-3">
-                                Escolha um plano:
-                            </FormLabel>
-                            <RadioGroup
-                                defaultValue={field.value}
-                                className="grid grid-cols-2"
-                            >
-                                {products.map((item) => (
-                                    <div
-                                        className="w-full"
-                                        key={item.id}
-                                        onClick={() => field.onChange(item.id)}
-                                    >
-                                        <RadioGroupItem
-                                            className="sr-only"
-                                            value={item.id}
-                                        />
-                                        <Label>
-                                            <Card
-                                                className={`${
-                                                    field.value === item.id
-                                                        ? "border-2 border-primary"
-                                                        : "border-2 border-background"
-                                                } w-full`}
-                                            >
-                                                <CardContent>
-                                                    <CardDescription className="text-xs font-medium text-muted-foreground">
-                                                        {item.title}
-                                                    </CardDescription>
-                                                    <CardTitle className="text-base font-bold text-foreground">
-                                                        {formatAmount(
-                                                            item.amount
-                                                        )}
-                                                    </CardTitle>
-                                                </CardContent>
-                                            </Card>
-                                        </Label>
-                                    </div>
-                                ))}
-                            </RadioGroup>
-                        </FormItem>
-                    )}
-                />
+                <div className="flex flex-col gap-4">
+                    <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Nome</FormLabel>
+                                <Input {...field} type="text" />
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Email</FormLabel>
+                                <Input {...field} type="email" />
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="contact"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Contato</FormLabel>
+                                <Input
+                                    value={field.value}
+                                    type="text"
+                                    maxLength={14}
+                                    onChange={(e) => {
+                                        field.onChange(
+                                            transformPhonePattern(
+                                                e.target.value
+                                            )
+                                        );
+                                    }}
+                                />
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="product"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel className="mb-3">
+                                    Escolha um plano:
+                                </FormLabel>
+                                <RadioGroup
+                                    defaultValue={field.value}
+                                    className="grid grid-cols-2"
+                                >
+                                    {products.map((item) => (
+                                        <div
+                                            className="w-full"
+                                            key={item.id}
+                                            onClick={() =>
+                                                field.onChange(item.id)
+                                            }
+                                        >
+                                            <RadioGroupItem
+                                                className="sr-only"
+                                                value={item.id}
+                                            />
+                                            <Label>
+                                                <Card
+                                                    className={`${
+                                                        field.value === item.id
+                                                            ? "border-2 border-primary"
+                                                            : "border-2 border-background"
+                                                    } w-full`}
+                                                >
+                                                    <CardContent>
+                                                        <CardDescription className="text-xs font-medium text-muted-foreground">
+                                                            {item.title}
+                                                        </CardDescription>
+                                                        <CardTitle className="text-base font-bold text-foreground">
+                                                            {formatAmount(
+                                                                item.amount
+                                                            )}
+                                                        </CardTitle>
+                                                    </CardContent>
+                                                </Card>
+                                            </Label>
+                                        </div>
+                                    ))}
+                                </RadioGroup>
+                            </FormItem>
+                        )}
+                    />
+                </div>
                 <div className="flex items-end justify-end gap-2">
                     <Button type="submit">Prosseguir para pagamento</Button>
                 </div>

@@ -40,7 +40,7 @@ export function Testemonials() {
                         ]}
                     >
                         <CarouselContent>
-                            {Array.from({ length: 9 }).map((_, index) => (
+                            {Array.from({ length: 12 }).map((_, index) => (
                                 <CarouselItem
                                     className="basis-1/3 max-lg:basis-auto"
                                     key={index}

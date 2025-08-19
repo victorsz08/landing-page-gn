@@ -47,7 +47,7 @@ export function Princing() {
     return (
         <section
             id="pricing"
-            className="h-screen w-full flex justify-center items-center max-lg:h-full max-lg:p-8"
+            className="h-full w-full flex justify-center items-center max-lg:h-full max-lg:p-8"
         >
             <section className="flex flex-col items-center justify-center w-full space-y-12">
                 <div className="text-center space-y-2">
@@ -115,7 +115,7 @@ export function Princing() {
                             Comece agora e transforme sua vida
                         </Button>
                     </SheetTrigger>
-                    <SheetContent className="z-[10000]">
+                    <SheetContent className="z-[10000] h-full">
                         <SheetHeader>
                             <SheetTitle>Preencha o formulário</SheetTitle>
                             <SheetDescription>
