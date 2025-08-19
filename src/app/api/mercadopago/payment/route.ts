@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
             subtotal: product.amount.toLocaleString(),
         }
 
-        await sendMailCreateOrder({ email, name, product: productMail });
+        sendMailCreateOrder({ email, name, product: productMail });
         
         return NextResponse.json({ init_point: result.init_point });
     } catch (error) {

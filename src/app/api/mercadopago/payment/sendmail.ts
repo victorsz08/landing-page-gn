@@ -1,4 +1,5 @@
-import { EmailParams, MailerSend, Recipient, Sender } from "mailersend"
+import { enqueueEmail } from "@/lib/email-queue";
+import { EmailParams, MailerSend, Recipient, Sender } from "mailersend";
 
 export interface Product {
     orderId: string;
@@ -9,7 +10,7 @@ export interface Product {
 export interface SendMailInput {
     email: string;
     name: string;
-    product: Product; 
+    product: Product;
 }
 
 interface Personalization {
@@ -21,19 +22,19 @@ interface Personalization {
         subtotal: string;
         support_email: string;
         total_billing: string;
-    }
+    };
 }
-const mailerSend = new MailerSend({ 
-    apiKey: String(process.env.NEXT_MAILERSEND_APIKEY)
+const mailerSend = new MailerSend({
+    apiKey: String(process.env.NEXT_MAILERSEND_APIKEY),
 });
 
 const senderMail = "suporte@geraldonetotreinador.com.br";
 const senderName = "Geraldo Neto Treinador";
 const sentFrom = new Sender(senderMail, senderName);
 
-export async function sendMailCreateOrder({ email, name, product } : SendMailInput) {
+export function sendMailCreateOrder({ email, name, product }: SendMailInput) {
     const recipients = [new Recipient(email, name)];
-    
+
     const personalization: Personalization[] = [
         {
             email: email,
@@ -43,9 +44,9 @@ export async function sendMailCreateOrder({ email, name, product } : SendMailInp
                 order_id: product.orderId,
                 subtotal: product.subtotal,
                 support_email: senderMail,
-                total_billing: product.total_biling
-            }
-        }
+                total_billing: product.total_biling,
+            },
+        },
     ];
 
     const emailParams = new EmailParams()
@@ -54,10 +55,10 @@ export async function sendMailCreateOrder({ email, name, product } : SendMailInp
         .setReplyTo(sentFrom)
         .setSubject("Pedido Recebito")
         .setTemplateId("neqvygm130dg0p7w")
-        .setPersonalization(personalization)
+        .setPersonalization(personalization);
 
-    await mailerSend.email.send(emailParams);
-    return
+    enqueueEmail(emailParams);
+    return;
 }
 
 interface NotificationDetails {
@@ -66,16 +67,15 @@ interface NotificationDetails {
     productName: string;
     totalBilling: string;
     paymentId: string;
-};
+}
 
-export async function sendMailApprovedOrder({ 
-    name, 
-    email, 
-    productName, 
-    totalBilling, 
-    paymentId 
-}: NotificationDetails) 
-{
+export function sendMailApprovedOrder({
+    name,
+    email,
+    productName,
+    totalBilling,
+    paymentId,
+}: NotificationDetails) {
     const recipients = [new Recipient(email, name)];
     const personalization: Personalization[] = [
         {
@@ -86,20 +86,19 @@ export async function sendMailApprovedOrder({
                 product_name: productName,
                 subtotal: totalBilling,
                 total_billing: totalBilling,
-                support_email: senderMail
-            }
-        }
+                support_email: senderMail,
+            },
+        },
     ];
-
 
     const emailParams = new EmailParams()
         .setFrom(sentFrom)
-          .setTo(recipients)
-          .setReplyTo(sentFrom)
-          .setSubject(`Seu pedido #${paymentId} foi aprovado!`)
-          .setTemplateId("zr6ke4n807v4on12")
-          .setPersonalization(personalization);
-    
-    await mailerSend.email.send(emailParams);
-    return
+        .setTo(recipients)
+        .setReplyTo(sentFrom)
+        .setSubject(`Seu pedido #${paymentId} foi aprovado!`)
+        .setTemplateId("zr6ke4n807v4on12")
+        .setPersonalization(personalization);
+
+    enqueueEmail(emailParams);
+    return;
 }
