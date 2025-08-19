@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Inter, Poppins } from "next/font/google";
 import { Layout } from "@/components/layout";
+import { Analytics } from "@vercel/analytics/next";
 
 const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://geraldonetotreinador.com.br";
@@ -69,6 +70,7 @@ export default function RootLayout({
                 >
                     <Layout>{children}</Layout>
                 </ThemeProvider>
+                <Analytics />
             </body>
         </html>
     );
