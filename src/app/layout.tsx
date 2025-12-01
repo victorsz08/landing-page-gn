@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/next";
 const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://geraldonetotreinador.com.br";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
     title: {
         default: "Geraldo Neto Treinador | Consultoria de Treino e Musculação",
