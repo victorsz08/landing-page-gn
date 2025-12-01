@@ -15,7 +15,7 @@ export function About() {
         >
             <div className="relative w-full">
                 <Image
-                    src="/profile-2.png"
+                    src="/foto-1.png"
                     width={600}
                     height={600}
                     alt="Foto Perfil"
