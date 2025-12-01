@@ -44,7 +44,7 @@ export function Home() {
                     <div className="absolute inset-0 z-0 bg-radial to-70% from-primary to-transparent" />
                     <div className="absolute inset-0 z-10 h-full">
                         <Image
-                            src="/profile-2.png"
+                            src="/foto-2.png"
                             width={460}
                             height={460}
                             alt="Foto Perfil"

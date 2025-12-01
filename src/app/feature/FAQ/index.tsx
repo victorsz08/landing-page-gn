@@ -1,104 +1,136 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-
 
 interface FaqItems {
     value: string;
     title: string;
     content: React.ReactNode;
-};
+}
 
 const items: FaqItems[] = [
-   {
-    value: "question-1",
-    title: "Como funciona a consultoria?",
-    content: 
-        <>
-            <p className="text-xs font-light text-muted-foreground">
-                Após adquirir o seu plano, você receberá um e-mail com as próximas instruções e um 
-                formulário de anamnese. A partir dessas informações, montaremos uma estratégia{" "}
-                <strong className="font-medium text-foreground">100% personalizada</strong> de acordo com seus objetivos,
-                nível de treino e rotina.
-            </p>
-        </>
-},
-{
-    value: "question-2",
-    title: "O pagamento é seguro?",
-    content: 
-        <>
-            <p className="text-xs font-light text-muted-foreground">
-                Sim! Utilizamos o{" "}
-                <strong className="text-foreground font-medium">Mercado Pago</strong>, 
-                uma das plataformas de pagamento mais seguras do Brasil. 
-                Seus dados pessoais e financeiros ficam totalmente protegidos.
-            </p>
-        </>
-},
-{
-    value: "question-3",
-    title: "Preciso ter acesso à academia?",
-    content: 
-        <>
-            <p className="text-xs font-light text-muted-foreground">
-                Não necessariamente. Os treinos podem ser adaptados para serem feitos em{" "}
-                <strong className="text-foreground font-medium">academia</strong> ou em{" "}
-                <strong className="text-foreground font-medium">casa</strong>, com ou sem equipamentos.
-                Tudo depende da sua realidade e dos seus objetivos.
-            </p>
-        </>
-},
-{
-    value: "question-4",
-    title: "Em quanto tempo vou ver resultados?",
-    content: 
-        <>
-            <p className="text-xs font-light text-muted-foreground">
-                Isso varia de pessoa para pessoa, mas seguindo o plano de treino e alimentação recomendados,
-                é comum perceber mudanças em{" "}
-                <strong className="text-foreground font-medium">4 a 8 semanas</strong>. 
-                Lembre-se: consistência é a chave para resultados duradouros.
-            </p>
-        </>
-},
-{
-    value: "question-5",
-    title: "O acompanhamento é individual?",
-    content: 
-        <>
-            <p className="text-xs font-light text-muted-foreground">
-                Sim! Todo o processo é feito de forma{" "}
-                <strong className="text-foreground font-medium">individualizada</strong>, 
-                levando em conta suas necessidades, objetivos, disponibilidade de tempo e histórico de saúde.
-            </p>
-        </>
-},
-{
-    value: "question-6",
-    title: "Posso tirar dúvidas durante o acompanhamento?",
-    content: 
-        <>
-            <p className="text-xs font-light text-muted-foreground">
-                Claro! Você terá um canal direto de contato para{" "}
-                <strong className="text-foreground font-medium">tirar dúvidas, pedir ajustes</strong> 
-                e receber orientações sempre que precisar durante o período do seu plano.
-            </p>
-        </>
-},
-{
-    value: "question-7",
-    title: "E se eu nunca treinei antes?",
-    content: 
-        <>
-            <p className="text-xs font-light text-muted-foreground">
-                Não tem problema! O programa pode ser{" "}
-                <strong className="text-foreground font-medium">adaptado para iniciantes</strong>, 
-                começando do zero e evoluindo conforme você ganha confiança, força e condicionamento físico.
-            </p>
-        </>
-}
-]
-
+    {
+        value: "question-1",
+        title: "Como funciona a consultoria?",
+        content: (
+            <>
+                <p className="text-xs font-light text-muted-foreground">
+                    Após adquirir o seu plano, nós entraremos em contato com as
+                    próximas instruções e um formulário de anamnese. A partir
+                    dessas informações, montaremos uma estratégia{" "}
+                    <strong className="font-medium text-foreground">
+                        100% personalizada
+                    </strong>{" "}
+                    de acordo com seus objetivos, nível de treino e rotina.
+                </p>
+            </>
+        ),
+    },
+    {
+        value: "question-2",
+        title: "O pagamento é seguro?",
+        content: (
+            <>
+                <p className="text-xs font-light text-muted-foreground">
+                    Sim! O seu pagamento é totalmente seguro, e temos 7 dias de
+                    garantia. Seus dados pessoais e financeiros ficam totalmente
+                    protegidos.
+                </p>
+            </>
+        ),
+    },
+    {
+        value: "question-3",
+        title: "Preciso ter acesso à academia?",
+        content: (
+            <>
+                <p className="text-xs font-light text-muted-foreground">
+                    Não necessariamente. Os treinos podem ser adaptados para
+                    serem feitos em{" "}
+                    <strong className="text-foreground font-medium">
+                        academia
+                    </strong>{" "}
+                    ou em{" "}
+                    <strong className="text-foreground font-medium">
+                        casa
+                    </strong>
+                    , com ou sem equipamentos. Tudo depende da sua realidade e
+                    dos seus objetivos.
+                </p>
+            </>
+        ),
+    },
+    {
+        value: "question-4",
+        title: "Em quanto tempo vou ver resultados?",
+        content: (
+            <>
+                <p className="text-xs font-light text-muted-foreground">
+                    Isso varia de pessoa para pessoa, mas seguindo o plano de
+                    treino e alimentação recomendados, é comum perceber mudanças
+                    em{" "}
+                    <strong className="text-foreground font-medium">
+                        4 a 8 semanas
+                    </strong>
+                    . Lembre-se: consistência é a chave para resultados
+                    duradouros.
+                </p>
+            </>
+        ),
+    },
+    {
+        value: "question-5",
+        title: "O acompanhamento é individual?",
+        content: (
+            <>
+                <p className="text-xs font-light text-muted-foreground">
+                    Sim! Todo o processo é feito de forma{" "}
+                    <strong className="text-foreground font-medium">
+                        individualizada
+                    </strong>
+                    , levando em conta suas necessidades, objetivos,
+                    disponibilidade de tempo e histórico de saúde.
+                </p>
+            </>
+        ),
+    },
+    {
+        value: "question-6",
+        title: "Posso tirar dúvidas durante o acompanhamento?",
+        content: (
+            <>
+                <p className="text-xs font-light text-muted-foreground">
+                    Claro! Você terá um canal direto de contato para{" "}
+                    <strong className="text-foreground font-medium">
+                        tirar dúvidas, pedir ajustes
+                    </strong>
+                    e receber orientações sempre que precisar durante o período
+                    do seu plano.
+                </p>
+            </>
+        ),
+    },
+    {
+        value: "question-7",
+        title: "E se eu nunca treinei antes?",
+        content: (
+            <>
+                <p className="text-xs font-light text-muted-foreground">
+                    Não tem problema! O programa pode ser{" "}
+                    <strong className="text-foreground font-medium">
+                        adaptado para iniciantes
+                    </strong>
+                    , começando do zero e evoluindo conforme você ganha
+                    confiança, força e condicionamento físico.
+                </p>
+            </>
+        ),
+    },
+];
 
 export function Faq() {
     return (

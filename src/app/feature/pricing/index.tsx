@@ -1,4 +1,9 @@
-import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
 import { CardPricing } from "./card-pricing";
 import { Button } from "@/components/ui/button";
 import { Unlock } from "lucide-react";
@@ -12,6 +17,7 @@ import {
 } from "@/components/ui/sheet";
 import { FormPayment } from "./form";
 import Image from "next/image";
+import { PaymentDialog } from "@/components/payment-form";
 
 interface PricingProps {
     price: string;
@@ -87,18 +93,6 @@ export function Princing() {
                         </CardPricing>
                     ))}
                 </div>
-                <div className="flex flex-col items-center justify-center w-full p-8 gap-2">
-                    <h2 className="text-muted-foreground font-light w-[80%] text-sm text-center">
-                        Compra 100% segura! Receba sua consultoria após
-                        aprovação do pagamento.
-                    </h2>
-                    <Image
-                        src="/mercado-pago-logo.svg"
-                        alt="Pagamento 100% seguro Mercado Pago"
-                        width={240}
-                        height={80}
-                    />
-                </div>
                 <div className="w-full text-center max-lg:px-6">
                     <p className="text-sm font-normal text-muted-foreground">
                         <strong className="text-foreground font-medium">
@@ -108,24 +102,12 @@ export function Princing() {
                         atendimento.
                     </p>
                 </div>
-                <Sheet>
-                    <SheetTrigger asChild>
-                        <Button size="lg" type="button">
-                            <Unlock strokeWidth={3} className="w-8 h-8" />
-                            Comece agora e transforme sua vida
-                        </Button>
-                    </SheetTrigger>
-                    <SheetContent className="z-[10000]">
-                        <SheetHeader>
-                            <SheetTitle>Preencha o formulário</SheetTitle>
-                            <SheetDescription>
-                                Preencha todas as informações corretas e
-                                prossiga para o pagamento.
-                            </SheetDescription>
-                        </SheetHeader>
-                        <FormPayment />
-                    </SheetContent>
-                </Sheet>
+                <PaymentDialog>
+                    <Button size="lg" type="button">
+                        <Unlock strokeWidth={3} className="w-8 h-8" />
+                        Comece agora e transforme sua vida
+                    </Button>
+                </PaymentDialog>
             </section>
         </section>
     );
