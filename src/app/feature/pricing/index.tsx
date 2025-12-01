@@ -53,12 +53,12 @@ export function Princing() {
     return (
         <section
             id="pricing"
-            className="h-screen w-full flex justify-center items-center max-lg:h-full"
+            className="h-full w-full flex justify-center items-center max-lg:h-full max-lg:p-8"
         >
             <section className="flex flex-col items-center justify-center w-full space-y-12">
                 <div className="text-center space-y-2">
-                    <h1 className="text-3xl font-bold text-foreground">
-                        PREÇOS E PLANOS
+                    <h1 className="text-3xl font-bold text-foreground max-lg:text-2xl">
+                        HONORÁRIOS
                     </h1>
                     <p className="text-sm font-light text-muted-foreground/80">
                         Escolha um plano que se adapte ao seu objetivo

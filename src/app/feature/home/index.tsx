@@ -1,12 +1,21 @@
 import { Button } from "@/components/ui/button";
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
 import Image from "next/image";
+import { FormPayment } from "../pricing/form";
 
 export function Home() {
     return (
         <section
             id="home"
             className="h-screen w-full flex justify-center items-center px-32
-            max-lg:px-2 max-lg:flex-col-reverse"
+            max-lg:flex-col-reverse max-lg:p-8 max-lg:h-full"
         >
             <section className="flex items-center justify-center gap-12 max-sm:flex-col-reverse">
                 <section
@@ -28,12 +37,26 @@ export function Home() {
                         personalizado e foco total nos resultados.
                     </p>
                     <div className="flex items-center justify-start gap-2 max-lg:flex-col">
-                        <a href="#pricing">
-                            <Button size={"lg"}>
-                                Comece sua transformação hoje
-                            </Button>
-                        </a>
-                        <a href="#about">
+                        <Sheet>
+                            <SheetTrigger asChild>
+                                <Button size={"lg"} type="submit">
+                                    Quero iniciar agora mesmo
+                                </Button>
+                            </SheetTrigger>
+                            <SheetContent className="z-[10000] h-full">
+                                <SheetHeader>
+                                    <SheetTitle>
+                                        Preencha o formulário
+                                    </SheetTitle>
+                                    <SheetDescription>
+                                        Preencha todas as informações corretas e
+                                        prossiga para o pagamento.
+                                    </SheetDescription>
+                                </SheetHeader>
+                                <FormPayment />
+                            </SheetContent>
+                        </Sheet>
+                        <a href="#faq">
                             <Button size={"lg"} variant={"outline"}>
                                 Sobre à consultoria
                             </Button>

@@ -8,19 +8,28 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
 import Autoplay from "embla-carousel-autoplay";
 import { Unlock } from "lucide-react";
 import Image from "next/image";
+import { FormPayment } from "../pricing/form";
 
 export function Testemonials() {
     return (
         <section
             id="testimonials"
-            className="w-full h-full px-32 flex items-center justify-center max-lg:px-4"
+            className="w-full h-full px-32 flex items-center justify-center max-lg:px-4 max-lg:h-full"
         >
             <section className="w-full">
                 <div className="w-full text-center">
-                    <h1 className="text-4xl font-bold text-foreground">
+                    <h1 className="text-4xl font-bold text-foreground max-lg:text-2xl">
                         O QUE NOSSOS ALUNOS ESTÃO FALANDO?
                     </h1>
                     <p className="text-sm font-light text-muted-foreground">
@@ -40,7 +49,7 @@ export function Testemonials() {
                         ]}
                     >
                         <CarouselContent>
-                            {Array.from({ length: 9 }).map((_, index) => (
+                            {Array.from({ length: 12 }).map((_, index) => (
                                 <CarouselItem
                                     className="basis-1/3 max-lg:basis-auto"
                                     key={index}
@@ -48,9 +57,9 @@ export function Testemonials() {
                                     <Image
                                         alt={`testemonial-${index}`}
                                         src={`/testimonials-${index + 1}.png`}
-                                        width={450}
-                                        height={400}
-                                        className="rounded-lg object-cover h-[42rem]"
+                                        width={350}
+                                        height={320}
+                                        className="rounded-lg object-cover"
                                     />
                                 </CarouselItem>
                             ))}
@@ -59,13 +68,24 @@ export function Testemonials() {
                         <CarouselNext />
                     </Carousel>
                 </div>
-                <div className="w-full flex items-center justify-center mt-10">
-                    <a href="#pricing">
-                        <Button size="lg">
-                            <Unlock className="w-6 h-6" strokeWidth={3} />
-                            QUERO MINHA TRANSFORMAÇÃO AGORA
-                        </Button>
-                    </a>
+                <div className="w-full flex items-center justify-center mt-10 px-4">
+                    <Sheet>
+                        <SheetTrigger asChild>
+                            <Button size={"lg"} type="submit">
+                                Quero iniciar agora mesmo
+                            </Button>
+                        </SheetTrigger>
+                        <SheetContent className="z-[10000] h-full">
+                            <SheetHeader>
+                                <SheetTitle>Preencha o formulário</SheetTitle>
+                                <SheetDescription>
+                                    Preencha todas as informações corretas e
+                                    prossiga para o pagamento.
+                                </SheetDescription>
+                            </SheetHeader>
+                            <FormPayment />
+                        </SheetContent>
+                    </Sheet>
                 </div>
             </section>
         </section>

@@ -9,7 +9,7 @@ import { Testemonials } from "./feature/testemonials";
 
 export default function LandingPage() {
     return (
-        <main>
+        <main className="overflow-x-hidden w-full h-full py-10 flex flex-col gap-10">
             <Home />
             <About />
             <Services />

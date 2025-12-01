@@ -7,10 +7,11 @@ export function Services() {
     return (
         <section
             id="services"
-            className="w-full px-32 h-screen flex items-center justify-around max-lg:px-6 max-lg:text-center"
+            className="w-full px-32 h-screen flex items-center justify-around max-lg:text-center
+            max-lg:p-8 max-lg:h-full"
         >
             <section className="w-[50%] space-y-6 flex flex-col gap-8 max-lg:w-full">
-                <h1 className="text-4xl font-bold text-foreground">
+                <h1 className="text-4xl font-bold text-foreground max-lg:text-2xl">
                     BENEFÍCIOS EXCLUSIVOS
                 </h1>
                 <div className="flex flex-col space-y-8 justify-start items-start max-lg:text-start">
