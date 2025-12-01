@@ -105,7 +105,7 @@ export function Princing() {
                 <PaymentDialog>
                     <Button size="lg" type="button">
                         <Unlock strokeWidth={3} className="w-8 h-8" />
-                        Comece agora e transforme sua vida
+                        Comece agora e transforme seu corpo
                     </Button>
                 </PaymentDialog>
             </section>

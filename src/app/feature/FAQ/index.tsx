@@ -106,7 +106,7 @@ const items: FaqItems[] = [
                 <p className="text-xs font-light text-muted-foreground">
                     Claro! Você terá um canal direto de contato para{" "}
                     <strong className="text-foreground font-medium">
-                        tirar dúvidas, pedir ajustes
+                        tirar dúvidas, pedir ajustes{" "}
                     </strong>
                     e receber orientações sempre que precisar durante o período
                     do seu plano.

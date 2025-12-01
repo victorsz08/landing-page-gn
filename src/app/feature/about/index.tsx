@@ -28,11 +28,16 @@ export function About() {
                     QUEM SOU EU?
                 </h1>
                 <p className="text-sm text-foreground/70 font-light max-lg:text-xs">
-                    Me chamo Geraldo Neto! Sou graduado em Educação Física pela
-                    UNIFACISA! Tenho um alonga experiência dentro da musculação
-                    a mais de 10 anos. Ao longo destes anos, atendi diversas
-                    pessoas com objetivos distintos! Seja eles emagrecimento,
-                    saúde, hipertrofia, reabilitação, etc.
+                    Me chamo Geraldo Neto! Sou graduado em Educação física pela
+                    UNIFACISA (CREF 10 - 007836G/PB). Minha especialidade é
+                    treinamento com pesos. Na musculação, tenho uma experiência
+                    de treinamentos a mais de 10 anos! Possuo atuações nas áreas
+                    de reabilitação (em diversos tipos de patologias),
+                    emagrecimento, hipertrofia, saúde no geral. Atualmente, sou
+                    treinador para as pessoas que realmente querem mudar seu
+                    estilo de vida através da musculação e ter mais saúde,
+                    consequentemente, conquistar todos seus objetivos, seja
+                    hipertrofia, emagrecimento, etc.
                 </p>
                 <div className="flex items-center mt-4 justify-start gap-4 max-lg:gap-2 max-lg:justify-center">
                     <Card className="h-28 grid justify-center items-center">
