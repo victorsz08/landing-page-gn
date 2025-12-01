@@ -7,7 +7,7 @@ import { Layout } from "@/components/layout";
 const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://geraldonetotreinador.com.br";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
     title: {
         default: "Geraldo Neto Treinador | Consultoria de Treino e Musculação",
