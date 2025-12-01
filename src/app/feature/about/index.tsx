@@ -29,11 +29,10 @@ export function About() {
                 </h1>
                 <p className="text-sm text-foreground/70 font-light max-lg:text-xs">
                     Me chamo Geraldo Neto! Sou graduado em Educação Física pela
-                    UNIFACISA! Treino na musculação a mais de 10 anos e tenho
-                    uma vasta experiência no quesito de treinamento com pesos.
-                    Ao longo destes anos, atendi diversas pessoas com diversos
-                    objetivos! Seja eles emagrecimento, saúde, hipertrofia,
-                    reabilitação, etc.
+                    UNIFACISA! Tenho um alonga experiência dentro da musculação
+                    a mais de 10 anos. Ao longo destes anos, atendi diversas
+                    pessoas com objetivos distintos! Seja eles emagrecimento,
+                    saúde, hipertrofia, reabilitação, etc.
                 </p>
                 <div className="flex items-center mt-4 justify-start gap-4 max-lg:gap-2 max-lg:justify-center">
                     <Card className="h-28 grid justify-center items-center">

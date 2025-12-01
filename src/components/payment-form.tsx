@@ -109,7 +109,7 @@ export function PaymentDialog({ children }: { children: React.ReactNode }) {
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>{children}</DialogTrigger>
-            <DialogContent className="min-w-[40vw] p-10 z-10000">
+            <DialogContent className="min-w-[40vw] z-10000">
                 <DialogHeader className="mb-5">
                     <DialogTitle>Formulário de inscrição</DialogTitle>
                     <DialogDescription>

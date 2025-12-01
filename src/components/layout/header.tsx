@@ -37,7 +37,7 @@ export function Header() {
         >
             <div className="flex items-baseline-last gap-2">
                 <Image
-                    src="/logo.svg"
+                    src="/icon.svg"
                     alt="logo geraldo neto treinador"
                     width={42}
                     height={42}

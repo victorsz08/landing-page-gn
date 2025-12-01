@@ -1,14 +1,6 @@
 import { Button } from "@/components/ui/button";
-import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-} from "@/components/ui/sheet";
 import Image from "next/image";
-import { FormPayment } from "../pricing/form";
+import { PaymentDialog } from "@/components/payment-form";
 
 export function Home() {
     return (
@@ -37,25 +29,11 @@ export function Home() {
                         personalizado e foco total nos resultados.
                     </p>
                     <div className="flex items-center justify-start gap-2 max-lg:flex-col">
-                        <Sheet>
-                            <SheetTrigger asChild>
-                                <Button size={"lg"} type="submit">
-                                    Quero iniciar agora mesmo
-                                </Button>
-                            </SheetTrigger>
-                            <SheetContent className="z-[10000] h-full">
-                                <SheetHeader>
-                                    <SheetTitle>
-                                        Preencha o formulário
-                                    </SheetTitle>
-                                    <SheetDescription>
-                                        Preencha todas as informações corretas e
-                                        prossiga para o pagamento.
-                                    </SheetDescription>
-                                </SheetHeader>
-                                <FormPayment />
-                            </SheetContent>
-                        </Sheet>
+                        <PaymentDialog>
+                            <Button size={"lg"} type="submit">
+                                Quero iniciar agora mesmo
+                            </Button>
+                        </PaymentDialog>
                         <a href="#faq">
                             <Button size={"lg"} variant={"outline"}>
                                 Sobre à consultoria
