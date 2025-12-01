@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import {
     Dialog,
+    DialogClose,
     DialogContent,
     DialogDescription,
     DialogHeader,
@@ -18,6 +19,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Button } from "./ui/button";
 import emailjs from "@emailjs/browser";
+import { CheckIcon } from "lucide-react";
 
 interface PlanProps {
     id: number;
@@ -72,7 +74,8 @@ const contactScheme = z.object({
 type TContactForm = z.infer<typeof contactScheme>;
 
 export function PaymentDialog({ children }: { children: React.ReactNode }) {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [success, setSuccess] = useState<boolean>(false);
+    const [pending, setPending] = useState<boolean>(false);
 
     const form = useForm<TContactForm>({
         resolver: zodResolver(contactScheme),
@@ -93,127 +96,159 @@ export function PaymentDialog({ children }: { children: React.ReactNode }) {
     }
 
     async function sendEmail(data: TContactForm) {
+        setPending(true);
+
         try {
             await emailjs.send("service_4y3vjv9", "template_8acrzxd", data, {
                 publicKey: "pzprOXhQuidVm_gzn",
             });
 
-            form.reset();
-            setIsOpen(false);
+            setSuccess(true);
             return;
         } catch {
             console.log("Error ao enviar email - tente novamente mais tarde!");
+        } finally {
+            setPending(false);
         }
     }
 
     return (
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <Dialog>
             <DialogTrigger asChild>{children}</DialogTrigger>
-            <DialogContent className="min-w-[40vw] z-10000">
-                <DialogHeader className="mb-5">
-                    <DialogTitle>Formulário de inscrição</DialogTitle>
-                    <DialogDescription>
-                        Preencha as informações para que possamos entrar em
-                        contato
-                    </DialogDescription>
-                </DialogHeader>
-                <Form {...form}>
-                    <form
-                        className="space-y-5"
-                        onSubmit={form.handleSubmit(sendEmail)}
-                    >
-                        <FormField
-                            control={form.control}
-                            name="name"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <Label>Nome completo *</Label>
-                                    <Input
-                                        {...field}
-                                        placeholder="Nome completo"
-                                    />
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <Label>Email *</Label>
-                                    <Input
-                                        type="email"
-                                        {...field}
-                                        placeholder="exemplo@email.com"
-                                    />
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="contact"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <Label>Telefone *</Label>
-                                    <Input
-                                        {...field}
-                                        placeholder="(99) 9999-9999"
-                                        maxLength={15}
-                                        onChange={(e) => {
-                                            const valueFormated =
-                                                transformPhonePattern(
-                                                    e.target.value
-                                                );
-                                            field.onChange(valueFormated);
-                                        }}
-                                    />
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="plan"
-                            render={({ field }) => (
-                                <FormItem className="flex mt-6 flex-col justify-start items-start">
-                                    <Label>Escolha um plano:</Label>
-                                    <RadioGroup
-                                        defaultValue="Mensal"
-                                        className="flex items-start justify-between w-full"
-                                    >
-                                        {plans.map((p) => (
-                                            <div
-                                                key={p.id}
-                                                className="flex flex-col items-center gap-2"
-                                            >
-                                                <RadioGroupItem
-                                                    value={p.label}
-                                                    onChange={() =>
-                                                        field.onChange(p.label)
-                                                    }
-                                                />
-                                                <div className="flex flex-col items-center gap-1">
-                                                    <p className="text-muted-foreground/80 font-medium text-sm">
-                                                        {p.label}
-                                                    </p>
-                                                    <p className="text-foreground font-bold text-xl">
-                                                        {p.price}
-                                                    </p>
+            {!success ? (
+                <DialogContent className="min-w-[40vw] z-10000">
+                    <DialogHeader className="mb-5">
+                        <DialogTitle>Formulário de inscrição</DialogTitle>
+                        <DialogDescription>
+                            Preencha as informações para que possamos entrar em
+                            contato
+                        </DialogDescription>
+                    </DialogHeader>
+                    <Form {...form}>
+                        <form
+                            className="space-y-5"
+                            onSubmit={form.handleSubmit(sendEmail)}
+                        >
+                            <FormField
+                                control={form.control}
+                                name="name"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <Label>Nome completo *</Label>
+                                        <Input
+                                            {...field}
+                                            placeholder="Nome completo"
+                                        />
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <Label>Email *</Label>
+                                        <Input
+                                            type="email"
+                                            {...field}
+                                            placeholder="exemplo@email.com"
+                                        />
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="contact"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <Label>Telefone *</Label>
+                                        <Input
+                                            {...field}
+                                            placeholder="(99) 9999-9999"
+                                            maxLength={15}
+                                            onChange={(e) => {
+                                                const valueFormated =
+                                                    transformPhonePattern(
+                                                        e.target.value
+                                                    );
+                                                field.onChange(valueFormated);
+                                            }}
+                                        />
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="plan"
+                                render={({ field }) => (
+                                    <FormItem className="flex mt-6 flex-col justify-start items-start">
+                                        <Label>Escolha um plano:</Label>
+                                        <RadioGroup
+                                            defaultValue="Mensal"
+                                            className="flex items-start justify-between w-full"
+                                        >
+                                            {plans.map((p) => (
+                                                <div
+                                                    key={p.id}
+                                                    className="flex flex-col items-center gap-2"
+                                                >
+                                                    <RadioGroupItem
+                                                        value={p.label}
+                                                        onChange={() =>
+                                                            field.onChange(
+                                                                p.label
+                                                            )
+                                                        }
+                                                    />
+                                                    <div className="flex flex-col items-center gap-1">
+                                                        <p className="text-muted-foreground/80 font-medium text-sm">
+                                                            {p.label}
+                                                        </p>
+                                                        <p className="text-foreground font-bold text-xl">
+                                                            {p.price}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
-                                    </RadioGroup>
-                                </FormItem>
-                            )}
-                        />
-                        <Button className="w-full h-12 mt-8" type="submit">
-                            Confirmar
-                        </Button>
-                    </form>
-                </Form>
-            </DialogContent>
+                                            ))}
+                                        </RadioGroup>
+                                    </FormItem>
+                                )}
+                            />
+                            <Button
+                                disabled={pending}
+                                className="w-full h-12 mt-8"
+                                type="submit"
+                            >
+                                {pending ? "Enviando dados..." : "Confirmar"}
+                            </Button>
+                        </form>
+                    </Form>
+                </DialogContent>
+            ) : (
+                <DialogContent className="min-h-[60vh] min-w-[40vw]">
+                    <div className="flex flex-col gap-3 justify-center items-center">
+                        <CheckIcon className="w-10 h-10 text-green-500" />
+                        <div className="flex flex-col items-center gap-3">
+                            <h1 className="text-3xl font-bold text-foreground">
+                                Obrigado!
+                            </h1>
+                            <p className="text-center text-sm font-medium text-foreground/60">
+                                Aguarde que em breve entraremos em contato para
+                                finalizar-mos sua aquisição! Não se preocupe que
+                                nossa equipe entra em contato rapidamente.
+                            </p>
+                        </div>
+                        <DialogClose asChild>
+                            <Button className="mt-6" type="button">
+                                Fechar
+                            </Button>
+                        </DialogClose>
+                    </div>
+                </DialogContent>
+            )}
         </Dialog>
     );
 }

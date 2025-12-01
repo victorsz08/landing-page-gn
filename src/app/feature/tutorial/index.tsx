@@ -43,9 +43,8 @@ export function Tutorial() {
                             <AccordionContent>
                                 <p className="text-xs font-light text-muted-foreground">
                                     Preencha as informações corretas solicitadas
-                                    no formulário, as informações são para
-                                    contato, onde após pagamento nós entraremos
-                                    em contato.
+                                    no formulário, as informações são para que
+                                    entraremos em contato.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>
@@ -55,24 +54,9 @@ export function Tutorial() {
                             </AccordionTrigger>
                             <AccordionContent>
                                 <p className="text-xs font-light text-muted-foreground">
-                                    Efetue o pagamanto através do{" "}
-                                    <strong className="text-foreground">
-                                        Mercado Pago
-                                    </strong>
-                                    , e aguarde as instruções pelo email
-                                    cadastrado no email anterior.
-                                </p>
-                                <p className="text-xs font-light text-muted-foreground">
-                                    Não se preocupe, o pagamento é feito de
-                                    forma{" "}
-                                    <strong className="text-foreground">
-                                        100% segura
-                                    </strong>{" "}
-                                    em na própria plataforma do{" "}
-                                    <strong className="text-foreground">
-                                        Mercado Pago
-                                    </strong>
-                                    .
+                                    Após o envio dos dados iniciais, entraremos
+                                    em contato para você efetuar o pagamento e
+                                    darmos início à sua consultoria.
                                 </p>
                             </AccordionContent>
                         </AccordionItem>
